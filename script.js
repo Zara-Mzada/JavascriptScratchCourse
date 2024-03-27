@@ -320,17 +320,18 @@
 // console.log(generatePassword(30));
 
 
-const number = [1,2,3,-2,6,3,9,-4];
+// const number = [1,2,3,-2,6,3,9,-4];
 
 // function compareFn(a, b){
-  // if(a>b) return 1;
-  // if(a<b) return -1;
-  // return 0;
-  // console.log(a,b);
+//   if(a>b) return 1;
+//   if(a<b) return -1;
+//   return 0;
+//   console.log(a,b);
 //   return a-b;
 // }
 
 // number.sort(compareFn);
+
 
 // function callbackFn(element){
 //   console.log(element);
@@ -356,24 +357,123 @@ const number = [1,2,3,-2,6,3,9,-4];
 
 // ****************** Object ***********************
 
-const student = {
-  firstName: 'Qenber',
-  lastName: 'Ibrahimov',
-  age: 17,
-  jobTitle: 'Student',
-  ismarried: false,
-  address: {
-    city: 'Baku',
-    country:'Azerbaijan',
+// const student = {
+//   firstName: 'Qenber',
+//   lastName: 'Ibrahimov',
+//   age: 17,
+//   jobTitle: 'Student',
+//   ismarried: false,
+//   address: {
+//     city: 'Baku',
+//     country:'Azerbaijan',
+//   }
+// };
+
+// delete student.age;
+
+// student.sayHello = function(){
+//   console.log('Hello, my name is Intiqam')
+// };
+
+// student['skills']=['Javascript', 'Java'];
+
+// console.log(student['address']);
+
+// *************** Practise of String ****************
+
+//------- 1 exercise
+// function reverseString (someString){
+//   let reverse = '';
+//   for (let i=someString.length-1; i>=0; i--){
+//     const char = someString[i];
+//     reverse += char;
+//   }
+//   return reverse;
+// }
+// console.log(reverseString('I am a string'));
+
+// ------- 2 exercise
+
+// function isPalindrome(string){
+//   let left = 0;
+//   let right = string.length - 1;
+
+//   while(left < right){
+//     if(string[left] != string[right]){
+//       return false;
+//     }
+//     // left++;
+//     // right--;
+//   }
+//   return true;
+// }
+
+// console.log(isPalindrome('asda'));
+
+// function getCharFrequency(string){
+//   const frequency = {};
+
+//   for(let i=0; i<string.length; i++){
+//     const char = string[i];
+//     if (char in frequency){
+//       frequency[char]++;
+//     }
+//     else{
+//       frequency[char]=1;
+//     }
+//   }
+//   return frequency;
+// };
+// console.log(getCharFrequency('Salam, balaca!'))
+
+// function mostFrequentCharacter(string){
+//   const frequency = getCharFrequency(string);
+//   let maxFreq = -Infinity;
+//   let mostFreqChar;
+
+//   for(let i=0; i<string.length; i++){
+//     const curChar = string[i];
+//     const curFreq = frequency[curChar];
+
+//     if(curFreq>maxFreq){
+//       maxFreq = curFreq;
+//       mostFreqChar = maxFreq;
+//     }
+//   }
+//   return mostFreqChar;
+// }
+
+function countWords(sentence){
+  let count = 0;
+  let i=0;
+  while(sentence[i]=='') i++;
+  for(; i<sentence.length; i++){
+    const curChar = sentence[i];
+    const nextChar = sentence[i+1];
+    if(curChar == ' ' && nextChar != ' '){
+      count++;
+    }
   }
-};
+  return count+1;
+}
 
-delete student.age;
+function getWords(string){
+  let newArray = [];
+  let curWord = '';
+  for(let i=0; i<string.length; i++){
+    const currChar = string[i];
+    
+    if(currChar== ' '){
+      newArray.push(curWord);
+      curWord = '';
+    }
+    else{
+      curWord += currChar;
+    }
+  }
 
-student.sayHello = function(){
-  console.log('Hello, my name is Intiqam')
-};
-
-student['skills']=['Javascript', 'Java'];
-
-console.log(student['address']);
+  if(curWord != ''){
+    newArray.push(curWord);
+  }
+  return newArray;
+}
