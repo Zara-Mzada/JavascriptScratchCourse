@@ -443,37 +443,39 @@
 //   return mostFreqChar;
 // }
 
-function countWords(sentence){
-  let count = 0;
-  let i=0;
-  while(sentence[i]=='') i++;
-  for(; i<sentence.length; i++){
-    const curChar = sentence[i];
-    const nextChar = sentence[i+1];
-    if(curChar == ' ' && nextChar != ' '){
-      count++;
-    }
-  }
-  return count+1;
-}
+// function countWords(sentence){
+//   let count = 0;
+//   let i=0;
+//   while(sentence[i]=='') i++;
+//   for(; i<sentence.length; i++){
+//     const curChar = sentence[i];
+//     const nextChar = sentence[i+1];
+//     if(curChar == ' ' && nextChar != ' '){
+//       count++;
+//     }
+//   }
+//   return count+1;
+// }
 
-function getWords(string){
-  let newArray = [];
-  let curWord = '';
-  for(let i=0; i<string.length; i++){
-    const currChar = string[i];
+// function getWords(string){
+//   let newArray = [];
+//   let curWord = '';
+//   for(let i=0; i<string.length; i++){
+//     const currChar = string[i];
     
-    if(currChar== ' '){
-      newArray.push(curWord);
-      curWord = '';
-    }
-    else{
-      curWord += currChar;
-    }
-  }
+//     if(currChar== ' '){
+//       newArray.push(curWord);
+//       curWord = '';
+//     }
+//     else{
+//       curWord += currChar;
+//     }
+//   }
 
-  if(curWord != ''){
-    newArray.push(curWord);
-  }
-  return newArray;
-}
+//   if(curWord != ''){
+//     newArray.push(curWord);
+//   }
+//   return newArray;
+// }
+// console.log(getWords('sdk dj'))
+
