@@ -304,7 +304,6 @@
 // }
 // console.log(reverse([2, 4, 5, 6, 7, 3, 8, 9]));
 
-
 // function generatePassword(length) {
 //   const alph = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
 
@@ -319,7 +318,6 @@
 // }
 // console.log(generatePassword(30));
 
-
 // const number = [1,2,3,-2,6,3,9,-4];
 
 // function compareFn(a, b){
@@ -331,7 +329,6 @@
 // }
 
 // number.sort(compareFn);
-
 
 // function callbackFn(element){
 //   console.log(element);
@@ -462,7 +459,7 @@
 //   let curWord = '';
 //   for(let i=0; i<string.length; i++){
 //     const currChar = string[i];
-    
+
 //     if(currChar== ' '){
 //       newArray.push(curWord);
 //       curWord = '';
@@ -479,3 +476,85 @@
 // }
 // console.log(getWords('sdk dj'))
 
+// const person1 = {name: 'Filankes'};
+// const person2 = {name: 'Filankes'};
+
+// console.log(person1 == person2);
+
+// const student =[
+//     {name: 'Aysel'},
+//     {name: 'Zehra'},
+//     {name: 'Aysun'},
+//     {name: 'Eltun'},
+// ];
+
+// const targetStudent = { name: 'Eltun'};
+
+// function findStudent (students, targetStudent){
+//     for (let i=0; i< student.length; i++){
+//         if(student[i]===targetStudent)
+//         return true;
+//     }
+//     return false;
+// }
+
+// function increament(x){
+//     x.push(4);
+// }
+// let a = [1,2,3];
+// increament(a);
+// console.log(a);
+
+const set = new Set(["Filankes", "Nese", "Filankes"]);
+
+// set.add('Abbas');
+// set.add('Filankes');
+// set.add('Qulamhuseyn');
+// set.add('Nese');
+
+// set.delete('Nese');
+
+set.add({ name: "Qulamhuseyn" });
+
+set.forEach(function (value) {
+  console.log(value);
+});
+console.log(set);
+
+const myMap = new Map();
+myMap.set("name", "Qulamhuseyn");
+myMap.set("surname", "Filankesov");
+//delete, has, clear etc.
+
+console.log(myMap);
+
+const grades = [21, 34, 55, 67, 83, 21];
+
+const modifiedGrades = grades.map(function (current) {
+  if (current % 2 === 0) return current / 2;
+  return current;
+});
+
+const evenNumber = grades.find(function (current) {
+  return current % 2 === 0;
+});
+
+const evenNumbers = grades.filter(function (current) {
+  return current % 2 === 0;
+});
+
+const sum = grades.reduce(function(accumulator, current){
+    return accumulator + current;
+}, 0);
+
+const max = grades.reduce(function(acc, curr){
+    return Math.max(acc, curr);
+})
+
+const stringJoin = grades.join('-');
+console.log(stringJoin)
+//split, reverse, includes
+
+const reverseString2(string){
+    return string.split('').reverse().join('');
+}
