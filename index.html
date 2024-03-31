@@ -4,8 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .modal {
+            position: fixed;
+            height: 100vh;
+            width: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 99;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        .modal.open{
+            display: flex;
+        }
+        .modal-content{
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 70%;
+        }
+    </style>
 </head>
 <body>
-    <script src="./script.js"></script>
+    <div id= "helloModal" class="modal">
+        <div class="modal-content">
+            <h1>Hello, world!</h1>
+            <button id="closeButton">Close</button>
+        </div>
+    </div>
+    <button id="myButton">Open modal</button>
+    <script>
+
+        const helloModal = document.getElementById('helloModal');
+        const myButton = document.getElementById('myButton');
+        const closeButton = document.getElementById('closeButton')
+
+        myButton.addEventListener('click' , function(){
+            helloModal.classList.add('open');
+        })
+
+        closeButton.addEventListener('click' , function(){
+            helloModal.classList.remove('open');
+        })
+        
+        // myButton.onclick = function onClickButton(){
+        //     console.log('Button clicked!')
+        // } 
+        // const h1 = document.getElementById('myhead');
+        // console.log(h1);
+
+        // const h1 = document.querySelector('#myhead');
+        // console.log(h1)
+    </script>
 </body>
 </html>

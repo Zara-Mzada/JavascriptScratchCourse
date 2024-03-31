@@ -505,7 +505,7 @@
 // increament(a);
 // console.log(a);
 
-const set = new Set(["Filankes", "Nese", "Filankes"]);
+// const set = new Set(["Filankes", "Nese", "Filankes"]);
 
 // set.add('Abbas');
 // set.add('Filankes');
@@ -514,47 +514,49 @@ const set = new Set(["Filankes", "Nese", "Filankes"]);
 
 // set.delete('Nese');
 
-set.add({ name: "Qulamhuseyn" });
+// set.add({ name: "Qulamhuseyn" });
 
-set.forEach(function (value) {
-  console.log(value);
-});
-console.log(set);
+// set.forEach(function (value) {
+//   console.log(value);
+// });
+// console.log(set);
 
-const myMap = new Map();
-myMap.set("name", "Qulamhuseyn");
-myMap.set("surname", "Filankesov");
+// const myMap = new Map();
+// myMap.set("name", "Qulamhuseyn");
+// myMap.set("surname", "Filankesov");
 //delete, has, clear etc.
 
-console.log(myMap);
+// console.log(myMap);
 
-const grades = [21, 34, 55, 67, 83, 21];
+// const grades = [21, 34, 55, 67, 83, 21];
 
-const modifiedGrades = grades.map(function (current) {
-  if (current % 2 === 0) return current / 2;
-  return current;
-});
+// const modifiedGrades = grades.map(function (current) {
+//   if (current % 2 === 0) return current / 2;
+//   return current;
+// });
 
-const evenNumber = grades.find(function (current) {
-  return current % 2 === 0;
-});
+// const evenNumber = grades.find(function (current) {
+//   return current % 2 === 0;
+// });
 
-const evenNumbers = grades.filter(function (current) {
-  return current % 2 === 0;
-});
+// const evenNumbers = grades.filter(function (current) {
+//   return current % 2 === 0;
+// });
 
-const sum = grades.reduce(function(accumulator, current){
-    return accumulator + current;
-}, 0);
+// const sum = grades.reduce(function(accumulator, current){
+//     return accumulator + current;
+// }, 0);
 
-const max = grades.reduce(function(acc, curr){
-    return Math.max(acc, curr);
-})
+// const max = grades.reduce(function(acc, curr){
+//     return Math.max(acc, curr);
+// })
 
-const stringJoin = grades.join('-');
-console.log(stringJoin)
-//split, reverse, includes
+// const stringJoin = grades.join('-');
+// console.log(stringJoin)
+// //split, reverse, includes
 
-const reverseString2(string){
-    return string.split('').reverse().join('');
-}
+// const reverseString2 (string){
+//     return string.split('').reverse().join('');
+// };
+
+
