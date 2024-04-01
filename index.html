@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        /* body{
             margin: 0;
         }
         .modal {
@@ -27,30 +27,88 @@
             padding: 20px;
             border-radius: 10px;
             max-width: 70%;
+        } */
+
+        #alert{
+            color: red;
+            padding: 10px;
+            display: none;
+        }
+
+        input{
+            border: 2px solid black;
+            padding: 10px 15px;
+            outline: none;
         }
     </style>
 </head>
 <body>
-    <div id= "helloModal" class="modal">
+    <!-- <div id= "helloModal" class="modal">
         <div class="modal-content">
             <h1>Hello, world!</h1>
             <button id="closeButton">Close</button>
         </div>
     </div>
-    <button id="myButton">Open modal</button>
+    <button id="myButton">Open modal</button> -->
+    <span id="alert">
+        Please, agree to our terms and conditions
+    </span>
+    <form id="myForm">
+        <input type="text" placeholder="Enter message" id="message"/>
+        <br>
+        <label><input type="checkbox" id="term"/> I agree</label>
+        <button>Send</button>
+    </form>
     <script>
+        const message = document.getElementById('message');
+        const alert = document.getElementById('alert')
+        const myForm = document.getElementById('myForm');
+    
+        message.addEventListener('keyup', function(event){
+            console.log(event.target.value);
+            if(event.target.value === 'Eltun'){
+                event.target.style.borderColor = 'green';
+            }
+            else{
+                event.target.style.borderColor = 'yellow';
+            }
+        });
 
-        const helloModal = document.getElementById('helloModal');
-        const myButton = document.getElementById('myButton');
-        const closeButton = document.getElementById('closeButton')
+        myForm.addEventListener('submit', function(event){
+            event.preventDefault();
 
-        myButton.addEventListener('click' , function(){
-            helloModal.classList.add('open');
+            if(message.value ===''){
+                message.style.borderColor = 'red';
+            }else{
+                message.style.borderColor = 'block'
+            }
+
+
+            if(!term.checked){
+                alert.style.display = 'block';
+            }
+            else{
+                alert.style.display = 'none';
+            }
         })
 
-        closeButton.addEventListener('click' , function(){
-            helloModal.classList.remove('open');
-        })
+        // const helloModal = document.getElementById('helloModal');
+        // const myButton = document.getElementById('myButton');
+        // const closeButton = document.getElementById('closeButton');
+
+        // function handleOpenClick(){
+        //     helloModal.classList.add('open');
+        // }
+
+        // myButton.addEventListener('click' , function(){
+        //     helloModal.classList.add('open');
+        // })
+
+        // myButton.addEventListener('click', handleOpenClick)
+
+        // closeButton.addEventListener('click' , function(){
+        //     helloModal.classList.remove('open');
+        // })
         
         // myButton.onclick = function onClickButton(){
         //     console.log('Button clicked!')
@@ -61,5 +119,7 @@
         // const h1 = document.querySelector('#myhead');
         // console.log(h1)
     </script>
+
+    
 </body>
 </html>
